@@ -513,11 +513,6 @@ DATABASES = {
         }
     }
 
-# shard per month
-SHARD_STRATEGY = 'monthly'
-SHARD_PREFIX = 'wm_'
-DATASTORE_URL = 'postgis://%s:%s@%s:5432/data' % (PG_USERNAME, PG_PASSWORD, PG_HOST)
-
 GEOSERVER_LOCATION = os.getenv(
     'GEOSERVER_LOCATION', 'http://localhost:8080/geoserver/'
 )
@@ -568,7 +563,7 @@ OGC_SERVER = {
         'LOG_FILE': '%s/geoserver/data/logs/geoserver.log',
         # Set to dictionary identifier of database containing spatial data in
         # DATABASES dictionary to enable
-        'DATASTORE': os.getenv('DEFAULT_BACKEND_DATASTORE', 'wmdata'),
+        'DATASTORE': os.getenv('DEFAULT_BACKEND_DATASTORE', 'datastore'),
         'PG_GEOGIG': False,
         # 'CACHE': ".cache"  # local cache file to for HTTP requests
         'TIMEOUT': int(os.getenv('OGC_REQUEST_TIMEOUT', '30'))  # number of seconds to allow for HTTP requests
