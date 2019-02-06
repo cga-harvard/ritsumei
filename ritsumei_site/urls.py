@@ -33,7 +33,6 @@ urlpatterns = [
     # extra url for the ritsumei project
     # url to disable
     url('^announcements', page_not_found),
-    url('^documents', page_not_found),
     url('^groups', page_not_found),
     url('^services', page_not_found),
 ] + urlpatterns
